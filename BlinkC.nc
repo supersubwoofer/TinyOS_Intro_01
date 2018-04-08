@@ -52,6 +52,7 @@ module BlinkC @safe()
   uses interface Timer<TMilli> as Timer0;
   uses interface Timer<TMilli> as Timer1;
   uses interface Timer<TMilli> as Timer2;
+  uses interface Timer<TMilli> as Timer3;
   uses interface Leds;
   uses interface Boot;
 }
@@ -62,6 +63,7 @@ implementation
     call Timer0.startPeriodic( 250 );
     call Timer1.startPeriodic( 500 );
     call Timer2.startPeriodic( 1000 );
+    call Timer3.startPeriodic( 100 );
   }
 
   event void Timer0.fired()
@@ -81,5 +83,11 @@ implementation
     dbg("BlinkC", "Timer 2 fired @ %s.\n", sim_time_string());
     call Leds.led2Toggle();
   }
+
+  event void Timer3.fired()
+  {
+    dbg("BlinkC", "I am Timer 3 and I have the shortest period!\n");
+  }
+
 }
 
