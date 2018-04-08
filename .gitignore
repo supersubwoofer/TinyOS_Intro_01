@@ -1,10 +1,10 @@
 .gitignore.swp
 simbuild/
-runblink.*
 app.xml
 _TOSSIMmodule.so
 TOSSIM.pyc
 TOSSIM.py
 .BlinkC.nc.swp
 .BlinkC.nc.swo
+runblink.py~
 .runblink.py.swp
